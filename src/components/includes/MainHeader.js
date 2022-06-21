@@ -39,7 +39,7 @@ export default function MainHeader({sliderMode}) {
           {sliderMode === 'chat' && <View style={styles.underLine} />}
         </View>
         <View style={styles.slideBox}>
-          <Text style={styles.slideText}>STAUTS</Text>
+          <Text style={styles.slideText}>STATUS</Text>
           {sliderMode === 'status' && <View style={styles.underLine} />}
         </View>
         <View style={styles.slideBox}>

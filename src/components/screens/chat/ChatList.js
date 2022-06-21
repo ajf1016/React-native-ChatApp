@@ -8,10 +8,10 @@ import {
   Image,
 } from 'react-native';
 import React from 'react';
-import MainHeader from '../includes/MainHeader';
-import {COLORS, SIZES} from '../constants';
-import {chatListData} from '../../data/chatListData';
-import {DoubleTick, GreenTick, OneTick} from '../includes/IconSets';
+import MainHeader from '../../includes/MainHeader';
+import {COLORS, SIZES} from '../../constants';
+import {chatListData} from '../../../data/chatListData';
+import {DoubleTick, GreenTick, OneTick} from '../../includes/IconSets';
 
 export default function ChatList() {
   return (
@@ -32,7 +32,7 @@ export default function ChatList() {
                   <View style={styles.left}>
                     <View style={styles.profilePicBox}>
                       <Image
-                        source={require('../../assets/images/user.png')}
+                        source={require('../../../assets/images/user.png')}
                         style={styles.image}
                       />
                     </View>
