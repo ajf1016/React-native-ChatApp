@@ -1,19 +1,58 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {COLORS, SIZES} from '../constants';
 
-export default function ChatScreenHeader() {
+export default function ChatScreenHeader({navigation, userDetails}) {
   return (
     <View style={styles.container}>
       <View style={styles.left}>
-        <View style={styles.iconBox}></View>
-        <View style={styles.profilePicBox}></View>
-        <Text style={styles.userName}>XkaZaA</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ChatList')}
+          style={[
+            styles.iconBox,
+            {transform: [{rotateY: '180deg'}], marginRight: SIZES.wp('2%')},
+          ]}>
+          <Image
+            style={styles.image}
+            source={require('../../assets/images/right-arrows.png')}
+            resizeMode={'contain'}
+          />
+        </TouchableOpacity>
+        <View style={styles.profilePicBox}>
+          {userDetails.profile_picture ? (
+            <Image source={userDetails.profile_picture} style={styles.image} resizeMode={'contain'}/>
+          ) : (
+            <Image
+              source={require('../../assets/images/user.png')}
+              style={styles.image}
+              resizeMode={'contain'}
+            />
+          )}
+        </View>
+        <Text style={styles.userName}>{userDetails.name}</Text>
       </View>
       <View style={styles.right}>
-        <View style={styles.iconBox}></View>
-        <View style={styles.iconBox}></View>
-        <View style={styles.iconBox}></View>
+        <View style={styles.iconBox}>
+          <Image
+            style={styles.image}
+            source={require('../../assets/images/phone.png')}
+            resizeMode={'contain'}
+          />
+        </View>
+        <View style={styles.iconBox}>
+          <Image
+            style={styles.image}
+            source={require('../../assets/images/video-cam.png')}
+            resizeMode={'contain'}
+          />
+        </View>
+        <View style={[styles.iconBox, {marginRight: 0}]}>
+          <Image
+            style={styles.image}
+            source={require('../../assets/images/dots.png')}
+            resizeMode={'contain'}
+          />
+        </View>
       </View>
     </View>
   );
@@ -34,10 +73,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   iconBox: {
-    width: SIZES.wp('7%'),
-    height: SIZES.wp('7%'),
+    width: SIZES.wp('5%'),
+    height: SIZES.wp('5%'),
     borderColor: '#fff',
-    borderWidth: 1,
+    marginRight: SIZES.wp('5%'),
   },
   profilePicBox: {
     width: 60,
@@ -56,5 +95,9 @@ const styles = StyleSheet.create({
   right: {
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
   },
 });

@@ -13,7 +13,7 @@ import {COLORS, SIZES} from '../../constants';
 import {chatListData} from '../../../data/chatListData';
 import {DoubleTick, GreenTick, OneTick} from '../../includes/IconSets';
 
-export default function ChatList() {
+export default function ChatList({navigation}) {
   return (
     <View>
       <MainHeader sliderMode={'chat'} />
@@ -27,14 +27,24 @@ export default function ChatList() {
           }}>
           {chatListData &&
             chatListData.map(item => (
-              <TouchableOpacity activeOpacity={0.8} key={item.id}>
+              <TouchableOpacity
+                activeOpacity={0.8}
+                key={item.id}
+                onPress={() => navigation.navigate('ChatScreen', item)}>
                 <View style={styles.listItem}>
                   <View style={styles.left}>
                     <View style={styles.profilePicBox}>
-                      <Image
-                        source={require('../../../assets/images/user.png')}
-                        style={styles.image}
-                      />
+                      {item.profile_picture ? (
+                        <Image
+                          source={item.profile_picture}
+                          style={styles.image}
+                        />
+                      ) : (
+                        <Image
+                          source={require('../../../assets/images/user.png')}
+                          style={styles.image}
+                        />
+                      )}
                     </View>
                     <View style={styles.middle}>
                       <Text style={styles.name}>{item.name}</Text>
