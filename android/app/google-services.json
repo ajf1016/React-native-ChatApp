@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "405841228561",
+    "project_id": "chatbase-927bc",
+    "storage_bucket": "chatbase-927bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405841228561:android:f03e197950718fe62952b0",
+        "android_client_info": {
+          "package_name": "com.reactnativechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405841228561-1fats4ad7nubbsfaqd0l3l7clgpt2ese.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfbIJqMT_j9iSEJyjghdbFqa8K2VImYUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405841228561-1fats4ad7nubbsfaqd0l3l7clgpt2ese.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
