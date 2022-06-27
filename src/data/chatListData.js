@@ -19,4 +19,14 @@ export const chatListData = [
     last_message_format: '',
     last_message: '',
   },
+  {
+    id: 'user3',
+    name: 'Shiyas',
+    profile_picture: '',
+    unread_count: 0,
+    last_message_time: '',
+    sent_message_status: '',
+    last_message_format: '',
+    last_message: '',
+  },
 ];
